@@ -1,0 +1,8 @@
+	Denials of health-insurance claims are rising and getting weirder in US: Washington Post
+	2023-05-19 13:37
+    WASHINGTON -- Denials of health-insurance claims are rising and getting weirder in the United States, an opinion article released Wednesday on The Washington Post said.
+    Millions of Americans in the past few years have run into this experience: filing a health-care insurance claim that once might have been paid immediately but instead is just as quickly denied, said the report.
+    If the experience and the insurer's explanation often seem arbitrary and absurd, that might be because companies appear increasingly likely to employ computer algorithms or people with little relevant experience to issue rapid-fire denials of claims - sometimes bundles at a time - without even reviewing the patient's medical chart; a job title at one company was "denial nurse," the report added, noting that it's a handy way for insurers to keep revenue high.
+    The report pointed out that denials have become yet another predictable, miserable part of the patient experience, with countless Americans unjustly being forced to pay out of pocket or, faced with that prospect, forgoing needed medical help.
+    Even when patients received care from in-network physicians - doctors and hospitals approved by these same insurers - the companies in 2021 nonetheless denied, on average, 17 percent of claims, said the report, citing a recent study by the Kaiser Family Foundation.
+    One insurer denied 49 percent of claims in 2021; another's turndowns hit an astonishing 80 percent in 2020. Despite the potentially dire impact that denials have on patients' health or finances, data shows that people appeal only once in every 500 cases, according to the report.
