@@ -54,7 +54,7 @@ def save_data(title, pub_time, content):
     if (not os.path.exists('../news_cabin')):
         os.mkdir('../news_cabin')
     # 定义不允许用作文件名的字符集合
-    unallowed_chars = r'[\\/:*?"<>|\s]'
+    unallowed_chars = r'[\\/:*?"<>|.\s]'
     # 使用正则表达式替换不允许的字符
     file_title = re.sub(unallowed_chars, ' ', title)
     with open(f'../news_cabin/{file_title}.txt', mode='w', encoding='utf-8') as news:
