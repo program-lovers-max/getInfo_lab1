@@ -9,6 +9,8 @@ from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+if not os.path.exists('../json_directory'):
+    os.mkdir('../json_directory')
 # 停用词
 stop_words = set(stopwords.words('english'))
 
@@ -20,6 +22,10 @@ corpus = []
 dirty_corpus = {}
 # 删去停用词的新闻标题-内容字典
 clean_corpus = {}
+# url字典
+url_index = {}
+# 日期字典
+date_index = {}
 # 存储新闻的目录
 cabin_path = '../news_cabin'
 
@@ -27,21 +33,27 @@ cabin_path = '../news_cabin'
 for news_path in glob.glob(os.path.join(cabin_path, "*.txt")):
     with open(news_path, mode='r+', encoding='utf-8') as news:
         title = os.path.basename(news_path).strip().split('.')[0]
+        # 获取url并存入字典
+        url = news.readline()
+        url_index[title] = url
+        # 获取日期并存入字典
+        date = news.readline().strip()
+        date_index[title] = date
         text = news.readlines()
         text = ' '.join(text)
         # 去除标点符号
-        text = re.sub(r"[^a-zA-Z\d]", " ", text)
+        text = re.sub(r"[^a-zA-Z]", " ", text)
         # 转换成小写
         text = text.lower()
         # 去除特殊符号
         text = re.sub("(\\W)+", " ", text)
         # 字符串转为List,用空格分词
         dirty_text = text.split()
+        dirty_text = [lem.lemmatize(word) for word in dirty_text]
+        dirty_corpus[title] = dirty_text
         text = [lem.lemmatize(word) for word in dirty_text if not word in stop_words]
         clean_corpus[title] = text
-        dirty_text = [lem.lemmatize(word) for word in dirty_text]
         text = " ".join(text)
-        dirty_corpus[title] = dirty_text
         corpus.append(text)
 
 # 创建TfidfVectorizer对象
@@ -87,3 +99,9 @@ for news_name in glob.glob(os.path.join(cabin_path, "*.txt")):
             text_vector[news_name].append(0)
 with open('../json_directory/text_vector.json', 'w') as f:
     json.dump(text_vector, f, indent=4)
+
+with open('../json_directory/url_index.json', 'w') as f:
+    json.dump(url_index, f, indent=4)
+
+with open('../json_directory/date_index.json', 'w') as f:
+    json.dump(date_index, f, indent=4)

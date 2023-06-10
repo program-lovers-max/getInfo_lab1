@@ -1,6 +1,0 @@
-	AI's potential use in medicine vast
-	2023-05-19 00:00
-    
-    Artificial intelligence can be harnessed to boost the efficiency of healthcare services and hospital management, devise tailored treatment plans and help address the shortage of doctors, a senior hospital manager said on Thursday.
-    Yan Hua, an ophthalmologist who is also Party chief of Tianjin Medical University, said that a wide range of AI tools such as speech recognition, computer vision, data collection and analysis can be deployed to empower the medical sector.
-    "AI can improve the efficiency of diagnosis and treatment and increase safety and precision in patient care," he said during a Vision China event organized by China Daily in Tianjin. "It can also prescribe personalized medicine based on the particular conditions and genomic information of patients to improve treatment outcomes."

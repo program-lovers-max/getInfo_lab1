@@ -44,22 +44,23 @@ def format_data(data):
     return url_list
 
 
-def save_data(title, pub_time, content):
+def save_data(title, pub_time, content, url):
     """
     :param title:  标题
     :param pub_time:  发布时间
     :param content:  发布内容
     :return:
     """
-    if (not os.path.exists('../news_cabin')):
+    if not os.path.exists('../news_cabin'):
         os.mkdir('../news_cabin')
     # 定义不允许用作文件名的字符集合
     unallowed_chars = r'[\\/:*?"<>|.\s]'
     # 使用正则表达式替换不允许的字符
     file_title = re.sub(unallowed_chars, ' ', title)
     with open(f'../news_cabin/{file_title}.txt', mode='w', encoding='utf-8') as news:
-        news.writelines('\t' + title + '\n')
+        news.writelines(url + '\n')
         news.writelines('\t' + pub_time + '\n')
+        news.writelines('\t' + title + '\n')
         news.writelines(content)
 
 
@@ -106,7 +107,7 @@ def get_url_per_detail(url_list):
                 sentence = sentence.strip()
                 sentence = "    " + sentence
                 content += sentence + '\n'
-            save_data(title=title, pub_time=pub_time, content=content)
+            save_data(title=title, pub_time=pub_time, content=content, url=url)
 
         except Exception as html:
             continue

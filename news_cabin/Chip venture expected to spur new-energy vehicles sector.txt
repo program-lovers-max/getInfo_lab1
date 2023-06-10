@@ -1,0 +1,19 @@
+https://epaper.chinadaily.com.cn/a/202306/09/WS64824fcfa3106e73106c4503.html
+	2023-06-09 00:00
+	Chip venture expected to spur new-energy vehicles sector
+    
+    European chipmaker STMicroelectronics NV will partner with China's Sanan Optoelectronics to build a factory in Chongqing that will cater to the rising demand for electric vehicles as well as industrial power and energy applications.
+    The cost of the joint venture is expected to be around $3.2 billion, including capital expenditure of about $2.4 billion over the next five years. This will be financed by contributions from STMicroelectronics and the Chinese chipmaker, local government support and loans, the companies said.
+    This is a testament to STMicroelectronics' commitment to China, the world's largest market for both semiconductors and new-energy vehicles, and directly refutes talk of a decoupling in the chips sector, experts said.
+    STMicroelectronics said in a statement on Wednesday that the new plant will make silicon carbide, or SiC, devices, and is targeting to start production in the fourth quarter of 2025. The complete build-out is expected in 2028.
+    Chips made with SiC transistors are widely used in electric vehicles as they withstand higher temperatures, have a longer life and are more energy-efficient than semiconductors made with silicon power transistors. Electric-car makers including Tesla, BYD and NIO use SiC devices in some models, experts said.
+    In parallel, Sanan Optoelectronics will build and operate separately a new 200 mm SiC substrate manufacturing facility to fulfill the JV's needs, using its own SiC substrate process.
+    "China is moving fast toward electrification in automotive and industrial products, and this is a market where ST is already well-established with many engaged customer programs. Creating a dedicated foundry with a key local partner is the most efficient way to serve the rising demand of our Chinese customers," said Jean-Marc Chery, president and CEO of STMicroelectronics, in a statement.
+    According to him, the combination of Sanan Optoelectronics' future substrate manufacturing facility with the front-end JV and STMicroelectronics' existing back-end facility in Shenzhen, Guangdong province, will enable the company to offer its Chinese customers a fully vertically integrated SiC value chain.
+    "The establishment of this joint venture will be a major driving force for the wide adoption of SiC devices in the Chinese market," said Simon Lin, CEO of Sanan Optoelectronics.
+    The completion of the project is subject to regulatory approvals.
+    Xiangli Bin, a vice-minister of science and technology, said during a speech in May that his ministry has always attached great importance to technological innovation and industrial development of third-generation semiconductors represented by silicon carbide, as they show good performance and have a huge market in new energy vehicles, information communication, smart grids and other fields.
+    Bai Ming, deputy director of international market research at the Chinese Academy of International Trade and Economic Cooperation, said the JV plan is an indicator that China continues to appeal to foreign chipmakers despite Washington's attempts to promote decoupling in the key sector.
+    
+    
+    

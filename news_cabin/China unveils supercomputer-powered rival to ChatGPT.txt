@@ -1,8 +1,0 @@
-	China unveils supercomputer-powered rival to ChatGPT
-	2023-05-19 14:14
-    China launched on Friday a large language artificial intelligence model powered by domestic supercomputing and intelligent computing platforms, in its latest push to accelerate the development of AI.
-    The large language model, whose name is roughly translated as Tianhe Tianyuan, is trained on Chinese big data sets and will help promote the application of domestic heterogeneous supercomputing platforms in AI products and services, according to its developer the National Supercomputing Center of Tianjin.
-    The Tianjin center is building the prototype of China's exascale supercomputer, Tianhe-3, which will handle more than 1 quintillion operations per second.
-    The center launched Tianhe-1 in October 2010, which is China's first petascale supercomputer capable of averaging over 2.5 quadrillion operations per second，according to the Tianjin center.
-    The center's large language model has seen about 350B tokens during training, with Chinese data sets covering open-source training data, Chinese novels, ancient literature, encyclopedia, news, as well as various datasets in professional fields such as traditional Chinese medicine, law and healthcare, the Tianjin center said in a statement.
-    A token is an instance of a sequence of characters in some particular document that are grouped together as a useful semantic unit for processing.

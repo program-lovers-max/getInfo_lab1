@@ -1,10 +1,12 @@
 # 文本预处理
 import json
+import os
 import re
 
 import numpy as np
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
+import csv
 
 # 停用词
 stop_words = set(stopwords.words('english'))
@@ -21,7 +23,11 @@ with open('../json_directory/rev_index.json') as f:
 with open('../json_directory/text_vector.json') as f:
     text_vec = json.loads(f.read())
 
+with open('../json_directory/url_index.json') as f:
+    url_index = json.loads(f.read())
 
+with open('../json_directory/date_index.json') as f:
+    date_index = json.loads(f.read())
 def pre_process(search_content):
     # 去除标点符号
     text = re.sub(r"[^a-zA-Z\d]", " ", search_content)
@@ -55,20 +61,33 @@ def get_result(search_content):
                 if cos_dict.get(title) == None:  # 如果之前没有记录该文章
                     # 计算余弦相似度
                     cos = np.dot(np.array(key_vector), np.array(text_vec[title])) / (
-                                np.linalg.norm(key_vector) * np.linalg.norm(text_vec[title]))
+                            np.linalg.norm(key_vector) * np.linalg.norm(text_vec[title]))
                     # 存储在字典中
-                    cos_dict[title] = cos
+                    cos_dict[title] = [cos]
+                cos_dict[title].append(word)
     # 将字典各项提取出来存入列表
-    cos_dict = list(cos_dict.items())
+    cos_list = list(cos_dict.items())
     # 按余弦相似度降序排列（即展示时相关度从高到底）
-    cos_dict = sorted(cos_dict, key=lambda x: x[1], reverse=True)
-    return cos_dict
+    cos_list = sorted(cos_list, key=lambda x: x[1], reverse=True)
+    return cos_list
 
 
-def show_news(cos_dict):
-    for title in cos_dict:
-        print(title[0])
-
+def show_news(cos_list):
+    header = ["相关度", "题目", "主要匹配内容", "URL", "日期"]  # 设置表头
+    with open('./result.csv', 'w', encoding='utf-8', newline='') as result_csv:
+        writer = csv.writer(result_csv)
+        writer.writerow(header)
+        for item in cos_list:
+            correlation = item[1][0]
+            title = item[0]
+            del item[1][0]
+            match_content = item[1]
+            URL = url_index.get(title)
+            date = date_index.get(title)
+            info = [correlation, title, match_content, URL, date]
+            writer.writerow(info)
+    result_csv.close()
+    os.system('start ./result.csv')
 
 if __name__ == '__main__':
     print('请输入你想要查询的文本(词或句皆可)')
