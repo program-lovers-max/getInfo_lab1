@@ -104,9 +104,10 @@ if __name__ == '__main__':
         with sr.Microphone() as source:
             while True:
                 print('请说出你想查询的词或句')
+                r.adjust_for_ambient_noise(source)
                 audio = r.listen(source)
                 try:
-                    sentence = r.recognize_google(audio)
+                    sentence = r.recognize_sphinx(audio)
                     print(f'您的语音输入是{sentence}')
                     show_news(get_result(sentence))
                     break
