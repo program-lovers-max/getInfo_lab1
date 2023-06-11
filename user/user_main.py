@@ -2,12 +2,12 @@
 import json
 import os
 import re
-
+import speech_recognition as sr
 import numpy as np
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 import csv
-
+from tkinter import Tk, Entry, Button, Label
 # 停用词
 stop_words = set(stopwords.words('english'))
 
@@ -72,6 +72,7 @@ def get_result(search_content):
     return cos_list
 
 
+
 def show_news(cos_list):
     header = ["相关度", "题目", "主要匹配内容", "URL", "日期"]  # 设置表头
     with open('./result.csv', 'w', encoding='utf-8', newline='') as result_csv:
@@ -89,7 +90,54 @@ def show_news(cos_list):
     result_csv.close()
     os.system('start ./result.csv')
 
+
+def submit():
+    entered_text = entry.get()
+    print("用户对本次搜索结果的评分是:", entered_text)
+
+
 if __name__ == '__main__':
-    print('请输入你想要查询的文本(词或句皆可)')
-    sentence = input()
-    show_news(get_result(sentence))
+    r = sr.Recognizer()
+    print("-------控制台文本输入请按0，语音输入请按1---------")
+    choice = int(input())
+    if choice:
+        with sr.Microphone() as source:
+            while True:
+                print('请说出你想查询的词或句')
+                audio = r.listen(source)
+                try:
+                    sentence = r.recognize_google(audio)
+                    print(f'您的语音输入是{sentence}')
+                    show_news(get_result(sentence))
+                    break
+                except Exception as e:
+                    print('未能识别你的语音，请重试')
+    else:
+        print('请输入你想要查询的文本(词或句皆可)')
+        sentence = input()
+        show_news(get_result(sentence))
+
+    # 创建主窗口
+    root = Tk()
+
+    # 设置窗口大小
+    root.geometry("500x300")
+
+    # 创建标签
+    label = Label(root, text="请输入你对本次搜索结果的评分(0-10)")
+    label.pack()
+
+    # 创建输入框
+    entry = Entry(root)
+    entry.pack()
+
+    # 创建按钮
+    button = Button(root, text="提交", command=submit)
+    button.pack()
+
+    # 设置布局管理器
+    label.pack(pady=40)  # 添加一些垂直间距
+    entry.pack(pady=20)
+    button.pack(pady=20)
+    # 进入事件循环
+    root.mainloop()
